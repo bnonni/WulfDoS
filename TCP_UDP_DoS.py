@@ -39,7 +39,7 @@ for y in range(threads):
         th = threading.Thread(target = floodUDP)
         th.start()
     elif(choice == "TCP").upper:
-        th.threading.Thread(target = floodTCP)
+        th = threading.Thread(target = floodTCP)
         th.start()
     else:
         print("Wrong input given")
