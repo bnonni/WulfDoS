@@ -4,7 +4,7 @@ import threading
 
 ip = str(input("Host/IP: "))
 port = int(input("Port: "))
-choice = str(input("TCP or UDP?"))
+choice = str(input("TCP or UDP?")).upper
 times = int(input("Packets per connection: "))
 threads = int(input("Threads: "))
 
@@ -35,10 +35,10 @@ def floodTCP():
             print("Error")
 
 for y in range(threads):
-    if(choice == "UDP").upper:
+    if(choice == "UDP"):
         th = threading.Thread(target = floodUDP)
         th.start()
-    elif(choice == "TCP").upper:
+    elif(choice == "TCP"):
         th = threading.Thread(target = floodTCP)
         th.start()
     else:
