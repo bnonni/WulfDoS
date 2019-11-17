@@ -8,7 +8,7 @@ from datetime import datetime
 # Packet sniffing on Linux
 s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW, 8)
 
-# USE THIS FOR WIN OR MAC: socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_IP)
+# USE THIS FOR WIN OR MAC: socket.socket(socket.AF_INET, socket.SOCK_RAW,socket.IPPROTO_IP)
 
 dict = {}
 

