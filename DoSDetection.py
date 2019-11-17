@@ -22,7 +22,7 @@ No_Of_IPs = 15
 R_No_Of_IPs = No_Of_IPs + 10
 
 while True:
-    pkt = s.recvfrom(2048)
+    pkt = s.recvfrom(1024)
     ipheader = pkt[0][14:34]
     ip_hdr = struct.unpack("!8sB3s4s4s", ipheader)
     IP = socket.inet_ntoa(ip_hdr[3])
@@ -33,7 +33,7 @@ if dict.has_key(IP):
     print(dict[IP])
 
 if(dict[IP] > No_Of_IPs) and (dict[IP] < R_No_Of_IPs):
-    line = "DDoS attack is Detected: "
+    line = print(f'DDoS attack is Detected: {IP}')
     file_txt = writelines(line)
     file_txt = writelines(IP)
     file_txt = writelines("\n")

