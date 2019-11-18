@@ -1,0 +1,4 @@
+# ip = str("")
+# port = int(80)/
+# if hyperthreaeding = true, thread # = 2 x cores
+a

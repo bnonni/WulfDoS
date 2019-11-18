@@ -1,6 +1,8 @@
 # f(un)*society00
 ## Operation WulfDoS
 
+[Checkout the Demo](https://www.youtube.com/watch?v=kQaJA66kncU&feature=youtu.be)
+
 Description & Purpose:
   * Operation WulfDoS is an attempt to DDoS attack an intentionally vulnerable linux OS running on Raspberry Pi: [RasPwn](https://raspwn.org/index).
   * WulfDoS uses a Beowulf Cluser to execute a simulated DDoS Attack on the RasPwn SSID.
@@ -8,24 +10,26 @@ Description & Purpose:
     - Better understanding TCP vs UDP
     - How to Build a HPC cluster
     - How to perform a DoS attack (TCP & UDP)
+    - Cores vs. Threads
+    - Hyperthreading
 
 Technical Specifications:
-  * Hardware: 
+  * Hardware:
     - 3x Raspberry Pi 3
     - 5x Raspberry Pi 4
     - 1x 2TB Seagate External Harddrive
     - 1x Netgear multi-port ethernet splitter
     - 1x Raspberry Pi Tower Case
-  * Software: 
+  * Software:
     - Linux
     - Raspbian Lite (Debian CLI)
-  * Packages: 
+  * Packages:
     - Slurm (Slurmd, Slurm-Client, Slurmctl)
     - Munge
     - NFS Kernel Server
     - Sockets
     - NTPUpdate
-  * Programming Languages: 
+  * Programming Languages:
     - Python 
     - Bash/Shell Scripting
 
