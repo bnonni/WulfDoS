@@ -13,6 +13,8 @@ Description & Purpose:
     - Cores vs. Threads
     - Hyperthreading
 
+Main Functionality: Execute DoS script across a 6-pi Beowulf Cluster
+
 Technical Specifications:
   * Hardware:
     - 3x Raspberry Pi 3
@@ -32,7 +34,5 @@ Technical Specifications:
   * Programming Languages:
     - Python 
     - Bash/Shell Scripting
-
-Main Functionality: Execute DoS script across a 6-pi Beowulf Cluster
 
 ## WulfDoS: the flood is coming...
